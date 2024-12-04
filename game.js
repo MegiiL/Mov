@@ -203,3 +203,46 @@ window.addEventListener("resize", calculateCanvasSize);
      
     }, 1)
   } )
+
+// Variables to store the start position of a swipe
+let touchStartX = 0;
+let touchStartY = 0;
+let touchEndX = 0;
+let touchEndY = 0;
+
+// Detect the start of a touch
+canvas.addEventListener("touchstart", (event) => {
+    const touch = event.touches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+});
+
+// Detect the end of a touch
+canvas.addEventListener("touchend", () => {
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+
+    // Determine swipe direction based on the largest movement
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        // Horizontal swipe
+        if (deltaX > 0) {
+            pacman.nextDirection = DIRECTION_RIGHT; // Swipe right
+        } else {
+            pacman.nextDirection = DIRECTION_LEFT; // Swipe left
+        }
+    } else {
+        // Vertical swipe
+        if (deltaY > 0) {
+            pacman.nextDirection = DIRECTION_BOTTOM; // Swipe down
+        } else {
+            pacman.nextDirection = DIRECTION_UP; // Swipe up
+        }
+    }
+});
+
+// Detect the movement of a touch
+canvas.addEventListener("touchmove", (event) => {
+    const touch = event.touches[0];
+    touchEndX = touch.clientX;
+    touchEndY = touch.clientY;
+});
