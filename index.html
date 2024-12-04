@@ -6,7 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Pacman</title>
-    <link rel="stylesheet" href="style.css"> 
+    <style>
+        body {
+    margin: 0;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    user-select: none; /* Prevent text selection */
+}
+
+canvas {
+    display: block;
+    touch-action: none; /* Prevent touch zoom */
+    -ms-touch-action: none;
+    -webkit-user-drag: none; /* Prevent image drag */
+    user-select: none; /* Prevent canvas selection */
+}
+
+    </style>
 </head>
 
 <body>
@@ -19,8 +45,8 @@
         <img id="ghosts" src="./assets/ghost.png" alt="">
     </div>
 
-    <script src="pacman.js"></script>
     <script src="game.js"></script>
+    <script src="pacman.js"></script>
     
     
 </body>
