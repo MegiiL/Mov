@@ -181,6 +181,14 @@ window.addEventListener("resize", calculateCanvasSize);
 
   createNewPacman();
   gameLoop(); 
+// Prevent text selection and context menu on long press
+canvas.addEventListener("touchstart", (event) => {
+    event.preventDefault(); // Prevent long press triggering selection
+});
+
+canvas.addEventListener("contextmenu", (event) => {
+    event.preventDefault(); // Prevent context menu on long press
+});
 
 // pacman movement on desktop using A/D W/S or arrow keys
   window.addEventListener("keydown", (event) =>{
