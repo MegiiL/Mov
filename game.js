@@ -1,7 +1,6 @@
 const canvas = document.getElementById("canvas");
 const canvasContext = canvas.getContext("2d");
 const pacmanFrames = document.getElementById("animations"); //7 pacman frames to look like he is biting
-const ghostFrames = document.getElementById("ghosts"); // 4 ghosts
 
 
 // Global variables to store canvas dimensions and block size
