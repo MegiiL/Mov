@@ -71,8 +71,6 @@ let gameLoop = () => {
 //game logic
 let update = () => {
     pacman.moveProcess();
-    pacman.eat();
-    pacman.eatPowerUp();
 
 };
 
